@@ -3,452 +3,480 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Where the Commandment Lands — Biblically Literate AI</title>
+<title>Where the Commandment Lands — the spine of Biblically Literate AI</title>
+<meta name="description" content="Ten commandments, two great commands, four pillars. Jesus moved the law from the visible act to the formation that precedes it — exactly where AI does its work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ivory:#FBF8F1; --ivory-deep:#F4EFE4; --ink:#221D17; --ink-soft:#5C544A;
-    --gold:#A8884F; --gold-soft:#C4AC7E; --rule:#E3DBCB;
+    --bone:#F5EFE3;
+    --bone-dim:#EAE1CE;
+    --ink:#191512;
+    --graphite:#57503F;
+    --oxide:#8A6A1C;
+    --oxide-bright:#C89B3C;
+    --oxblood:#7E2D26;
+    --oxblood-lift:#B0463C;
+    --hairline:#D8CCB4;
+    --hairline-ink:#3A322A;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{background:var(--ivory);color:var(--ink);font-family:'Manrope',sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;}
-  .serif{font-family:'Cormorant Garamond',serif;}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
-  .narrow{max-width:680px;}
+  body{background:var(--bone);color:var(--ink);font-family:'Newsreader',Georgia,serif;font-size:1.05rem;line-height:1.55;}
+  ::selection{background:var(--oxide-bright);color:var(--ink);}
+  .frame{max-width:1180px;margin:0 auto;padding:0 clamp(24px,4vw,48px);}
+  .label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;}
+  a{color:inherit;}
 
-  header.masthead{padding:34px 0 26px;border-bottom:1px solid var(--rule);}
-  .masthead-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;}
-  .brand{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;}
-  .brand span{color:var(--gold);}
-  .backlink{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;font-weight:500;}
-  .backlink:hover{color:var(--gold);}
+  .bar{background:var(--ink);color:var(--bone);}
+  .bar-in{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:16px;flex-wrap:wrap;}
+  .bar .who{font-family:'Fraunces',serif;font-weight:600;font-size:1rem;}
+  .bar a.back{text-decoration:none;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8;}
+  .bar a.back:hover{opacity:1;}
 
-  /* hero */
-  .hero{padding:84px 0 66px;border-bottom:1px solid var(--rule);}
-  .hero .kicker{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:24px;}
-  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.08;letter-spacing:-.01em;max-width:16ch;margin-bottom:28px;}
-  .hero .standfirst{font-size:1.06rem;color:var(--ink-soft);max-width:60ch;margin-bottom:16px;}
-  .hero .standfirst strong{color:var(--ink);font-weight:600;}
+  .opening{background:var(--ink);color:var(--bone);border-top:1px solid var(--hairline-ink);}
+  .opening-in{padding:clamp(48px,7vw,96px) 0 clamp(40px,6vw,80px);display:grid;grid-template-columns:minmax(0,1.5fr) minmax(220px,.6fr);gap:clamp(26px,5vw,80px);}
+  .opening .kicker{color:var(--oxblood-lift);margin-bottom:26px;}
+  .opening h1{
+    font-family:'Fraunces',serif;font-weight:640;font-variation-settings:'opsz' 144;
+    font-size:clamp(2.7rem,7.6vw,5.8rem);line-height:.96;letter-spacing:-.025em;margin-bottom:26px;max-width:13ch;
+  }
+  .opening .claim{border-top:3px solid var(--oxblood-lift);padding-top:18px;max-width:48ch;font-size:clamp(1.08rem,1.8vw,1.3rem);font-weight:500;line-height:1.5;}
+  .opening .claim + p{max-width:52ch;margin-top:16px;color:#CFC5B2;font-size:1rem;}
+  .count-rail{border-left:1px solid var(--hairline-ink);padding-left:clamp(18px,2.5vw,32px);align-self:end;}
+  .count-rail .row{padding:12px 0;border-top:1px solid var(--hairline-ink);display:flex;justify-content:space-between;gap:12px;align-items:baseline;}
+  .count-rail .row:last-child{border-bottom:1px solid var(--hairline-ink);}
+  .count-rail .n{font-family:'Fraunces',serif;font-weight:620;font-size:1.7rem;color:var(--oxblood-lift);}
+  .count-rail .w{font-size:.85rem;color:#CFC5B2;max-width:16ch;text-align:right;}
 
-  /* the move */
-  .move{padding:74px 0;border-bottom:1px solid var(--rule);}
-  .move h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.6rem,3.2vw,2.2rem);margin-bottom:30px;}
-  .compare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:34px 0 30px;}
-  .compare > div{background:var(--ivory);padding:32px 30px;}
-  .compare .label{font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px;}
-  .compare .defense{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;line-height:1.4;margin-bottom:14px;color:var(--ink);}
-  .compare .answer{font-size:.9rem;color:var(--ink-soft);}
-  .move p{max-width:64ch;color:var(--ink-soft);margin-bottom:14px;}
-  .move p strong{color:var(--ink);font-weight:600;}
+  /* two defenses */
+  .defenses{padding:clamp(50px,7vw,90px) 0 clamp(30px,4vw,50px);}
+  .defenses h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.7rem,3.6vw,2.6rem);letter-spacing:-.015em;max-width:24ch;margin-bottom:34px;}
+  .df-grid{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink);}
+  .df{padding:clamp(22px,3vw,40px);}
+  .df + .df{border-left:2px solid var(--ink);}
+  .df .label{color:var(--oxide);margin-bottom:14px;display:block;}
+  .df .line{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.25rem,2.4vw,1.7rem);line-height:1.2;margin-bottom:14px;}
+  .df p{color:var(--graphite);font-size:.98rem;max-width:44ch;}
+  .df-after{max-width:62ch;margin-top:30px;color:var(--graphite);}
+  .df-after b{color:var(--ink);font-weight:600;}
 
   /* warrant chain */
-  .chain{padding:74px 0;border-bottom:1px solid var(--rule);}
-  .chain h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.6rem,3.2vw,2.2rem);margin-bottom:12px;}
-  .chain .sub{color:var(--ink-soft);max-width:58ch;margin-bottom:40px;font-size:.95rem;}
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
-  .step .n{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold);font-weight:500;margin-bottom:8px;}
-  .step h4{font-size:.95rem;font-weight:600;margin-bottom:8px;line-height:1.35;}
-  .step p{font-size:.83rem;color:var(--ink-soft);margin-bottom:8px;}
-  .step .ref{font-size:.7rem;letter-spacing:.06em;color:var(--gold);font-weight:500;}
+  .chain{padding:clamp(44px,6vw,80px) 0 clamp(24px,3vw,40px);}
+  .chain h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.6rem,3.2vw,2.3rem);letter-spacing:-.015em;margin-bottom:8px;}
+  .chain .sub{color:var(--graphite);max-width:56ch;margin-bottom:30px;}
+  .chain-row{display:grid;grid-template-columns:54px minmax(0,.9fr) minmax(0,1.1fr) 170px;gap:clamp(12px,2vw,26px);padding:16px 0;border-top:1px solid var(--hairline);align-items:baseline;}
+  .chain-row:last-child{border-bottom:1px solid var(--hairline);}
+  .chain-row .n{font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;color:var(--oxide);}
+  .chain-row h3{font-size:1.05rem;font-weight:600;}
+  .chain-row p{color:var(--graphite);font-size:.94rem;}
+  .chain-row .ref{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--oxide);text-align:right;}
 
-  /* table sections */
-  section.table-group{padding:66px 0 10px;}
-  .tg-head{display:flex;align-items:baseline;gap:18px;margin-bottom:10px;flex-wrap:wrap;}
-  .tg-head h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.5rem,3vw,2rem);}
-  .tg-head .pillar{font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:600;border:1px solid var(--gold-soft);padding:4px 10px;}
-  .tg-sub{color:var(--ink-soft);max-width:60ch;font-size:.93rem;margin-bottom:36px;}
+  /* commandment ledger */
+  .table-head{padding:clamp(44px,6vw,72px) 0 0;}
+  .table-head .band{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;}
+  .table-head h2{font-family:'Fraunces',serif;font-weight:620;font-size:clamp(1.9rem,4vw,2.9rem);letter-spacing:-.02em;}
+  .table-head .pill{border:2px solid var(--ink);padding:5px 12px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;}
+  .table-head .sub{color:var(--graphite);max-width:60ch;margin:12px 0 8px;}
 
-  .row{border-top:1px solid var(--rule);padding:32px 0;display:grid;grid-template-columns:56px 1fr;gap:24px;}
-  .row:last-child{border-bottom:1px solid var(--rule);}
-  .row .num{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold-soft);font-weight:500;line-height:1;}
-  .row .cmd{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;line-height:1.2;margin-bottom:4px;}
-  .row .cmd-ref{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:18px;}
-  .lands{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:18px;}
-  .lands .block .h{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:7px;}
-  .lands .block p{font-size:.9rem;color:var(--ink-soft);}
-  .lands .block .quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--ink);line-height:1.45;margin-bottom:6px;}
-  .lands .block .src{font-size:.68rem;color:var(--ink-soft);letter-spacing:.04em;}
-  .warrant{display:inline-block;font-size:.58rem;letter-spacing:.13em;text-transform:uppercase;font-weight:600;padding:2px 8px;margin-left:8px;vertical-align:2px;}
-  .w-stated{background:var(--gold);color:var(--ivory);}
-  .w-implied{background:var(--gold-soft);color:#3B2F1C;}
-  .w-applied{background:transparent;color:var(--ink-soft);border:1px solid var(--rule);}
-  .row .ask{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--ink);border-left:2px solid var(--gold);padding-left:16px;margin-bottom:16px;max-width:60ch;line-height:1.45;}
-  .row .topic{font-size:.7rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;}
-  .row .topic b{color:var(--gold);font-weight:600;}
-  .row .topic .new{background:var(--gold);color:var(--ivory);padding:2px 7px;font-size:.56rem;letter-spacing:.12em;margin-right:8px;}
-
-  /* legend */
-  .legend{padding:44px 0;border-top:1px solid var(--rule);margin-top:60px;display:flex;gap:34px;flex-wrap:wrap;align-items:flex-start;}
-  .legend .item{max-width:26ch;}
-  .legend .item p{font-size:.8rem;color:var(--ink-soft);margin-top:7px;}
-
-  .closing{padding:80px 0 66px;border-top:1px solid var(--rule);}
-  .closing blockquote{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.45rem,2.9vw,2rem);line-height:1.35;max-width:32ch;margin-bottom:24px;}
-  .closing blockquote em{font-style:italic;color:var(--gold);}
-  .closing p{max-width:58ch;color:var(--ink-soft);font-size:.94rem;}
-
-  footer{border-top:1px solid var(--rule);padding:32px 0 42px;}
-  footer .row2{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;}
-  footer .sig{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;}
-  footer .sig span{color:var(--gold);}
-  footer .fine{font-size:.7rem;letter-spacing:.07em;color:var(--ink-soft);}
-  .note{font-size:.76rem;color:var(--ink-soft);max-width:70ch;margin-top:14px;line-height:1.6;}
-
-  @media(max-width:880px){
-    .steps{grid-template-columns:1fr 1fr;gap:28px;}
-    .compare{grid-template-columns:1fr;}
-    .lands{grid-template-columns:1fr;gap:20px;}
+  .cmd{display:grid;grid-template-columns:clamp(56px,7vw,96px) 1fr;gap:clamp(14px,2.5vw,34px);padding:clamp(26px,4vw,40px) 0;border-top:1px solid var(--hairline);}
+  .cmd .big-n{
+    font-family:'Fraunces',serif;font-weight:640;font-size:clamp(2.6rem,6vw,4.6rem);
+    line-height:.9;color:var(--hairline);
   }
-  @media(max-width:560px){
-    .steps{grid-template-columns:1fr;}
-    .row{grid-template-columns:1fr;gap:10px;}
-    .row .num{font-size:1.5rem;}
+  .cmd:hover .big-n{color:var(--oxide);}
+  .cmd h3{font-family:'Fraunces',serif;font-weight:620;font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.08;letter-spacing:-.015em;}
+  .cmd .exref{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--graphite);margin:6px 0 18px;}
+  .cmd-cols{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(16px,3vw,40px);margin-bottom:16px;}
+  .cmd-cols .h{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:var(--oxide);margin-bottom:8px;}
+  .cmd-cols .quote{font-family:'Fraunces',serif;font-weight:520;font-size:1.12rem;line-height:1.4;margin-bottom:6px;}
+  .cmd-cols .src{font-size:.8rem;color:var(--graphite);}
+  .cmd-cols .gov{color:var(--graphite);font-size:.96rem;}
+  .warrant{display:inline-block;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:3px 9px;margin-left:8px;vertical-align:2px;}
+  .w-stated{background:var(--ink);color:var(--bone);}
+  .w-implied{background:var(--oxide);color:var(--bone);}
+  .w-applied{border:1px solid var(--graphite);color:var(--graphite);}
+  .cmd .ask{
+    border-left:3px solid var(--ink);padding-left:16px;margin:4px 0 14px;
+    font-size:1.08rem;font-weight:500;max-width:58ch;line-height:1.45;
+  }
+  .cmd .maps{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--graphite);}
+  .cmd .maps b{color:var(--oxide);font-weight:600;}
+  .cmd .maps .newflag{background:var(--oxblood);color:var(--bone);padding:3px 8px;font-size:.6rem;letter-spacing:.14em;margin-right:8px;}
+
+  .hinge{background:var(--bone-dim);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);}
+  .hinge .cmd{border-top:none;}
+
+  .legend{display:flex;gap:30px;flex-wrap:wrap;padding:clamp(28px,4vw,44px) 0;border-top:1px solid var(--hairline);margin-top:20px;}
+  .legend .it{max-width:26ch;font-size:.85rem;color:var(--graphite);}
+  .legend .it .warrant{margin:0 0 8px;display:inline-block;}
+
+  .endnote{background:var(--ink);color:var(--bone);margin-top:clamp(40px,6vw,70px);}
+  .endnote-in{padding:clamp(48px,7vw,84px) 0;}
+  .endnote .word{font-family:'Fraunces',serif;font-weight:620;font-size:clamp(1.7rem,4vw,2.9rem);line-height:1.14;letter-spacing:-.02em;max-width:24ch;margin-bottom:24px;}
+  .endnote .word span{color:var(--oxblood-lift);}
+  .endnote p{color:#CFC5B2;max-width:64ch;font-size:.95rem;margin-bottom:12px;}
+  .endnote .back-cta{display:inline-block;margin-top:14px;text-decoration:none;border:2px solid var(--bone);padding:14px 24px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;}
+  .endnote .back-cta:hover{background:var(--oxblood);border-color:var(--oxblood);}
+
+  footer{border-top:2px solid var(--ink);}
+  .foot-in{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:26px 0 46px;align-items:baseline;}
+  .foot-in .sig{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;}
+  .foot-links{display:flex;gap:24px;flex-wrap:wrap;}
+  .foot-links a{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--graphite);}
+  .foot-links a:hover{color:var(--oxide);}
+  .foot-in .fine{width:100%;color:var(--graphite);font-size:.78rem;margin-top:4px;}
+
+  @media(max-width:900px){
+    .opening-in{grid-template-columns:1fr;}
+    .count-rail{border-left:none;border-top:1px solid var(--hairline-ink);padding:20px 0 0;}
+    .df-grid{grid-template-columns:1fr;}
+    .df + .df{border-left:none;border-top:2px solid var(--ink);}
+    .chain-row{grid-template-columns:44px 1fr;}
+    .chain-row p{grid-column:2;}
+    .chain-row .ref{grid-column:2;text-align:left;}
+    .cmd-cols{grid-template-columns:1fr;}
   }
 </style>
 </head>
 <body>
 
-<header class="masthead">
-  <div class="wrap masthead-row">
-    <div class="brand">Hency <span>Varghese</span></div>
-    <a class="backlink" href="/">← Biblically Literate AI</a>
+<div class="bar">
+  <div class="frame bar-in">
+    <div class="who">Hency Varghese</div>
+    <a class="back" href="/">← Back to the guide</a>
   </div>
-</header>
+</div>
 
-<section class="hero">
-  <div class="wrap">
-    <div class="kicker">The Spine · Biblically Literate AI</div>
-    <h1>Where the Commandment Lands</h1>
-    <p class="standfirst"><strong>Jesus did to the law what AI governance still has to do to oversight:</strong> he moved the question from the visible act to the formation that precedes it.</p>
-    <p class="standfirst">Ten commandments. Two great commandments that sum them. Four pillars that carry them into an age of intelligent systems. This page shows the connective tissue — and why a compliance-layer reading of Scripture cannot produce literacy about tools that do their work upstream of choice.</p>
+<div class="opening">
+  <div class="frame opening-in">
+    <div>
+      <div class="label kicker">The spine · Biblically Literate AI</div>
+      <h1>Where the Commandment Lands</h1>
+      <p class="claim">Jesus did to the law what AI governance still has to do to oversight: he moved the question from the visible act to the formation that precedes it.</p>
+      <p>Ten commandments. Two great commands that sum them. Four pillars that carry them into an age of intelligent systems. This page is the connective tissue — and the reason a compliance-layer reading of Scripture cannot produce literacy about tools that do their work upstream of choice.</p>
+    </div>
+    <div class="count-rail">
+      <div class="row"><span class="n">10</span><span class="w">commandments, both tables</span></div>
+      <div class="row"><span class="n">2</span><span class="w">great commands that sum them</span></div>
+      <div class="row"><span class="n">4</span><span class="w">pillars that carry them forward</span></div>
+      <div class="row"><span class="n">21</span><span class="w">questions in the guide they anchor</span></div>
+    </div>
   </div>
-</section>
+</div>
 
-<section class="move">
-  <div class="wrap">
+<section class="defenses">
+  <div class="frame">
     <h2>The same defense, two thousand years apart</h2>
-    <div class="compare">
-      <div>
-        <div class="label">The compliance-layer defense</div>
-        <p class="defense">"I did not murder. I did not commit adultery."</p>
-        <p class="answer">The act is clean. The record shows nothing. And Jesus answers that the anger was already the thing, the look was already the thing — the commandment was never aiming at the hand alone.</p>
+    <div class="df-grid">
+      <div class="df">
+        <span class="label">The compliance-layer defense</span>
+        <p class="line">"I did not murder. I did not commit adultery."</p>
+        <p>The act is clean. The record shows nothing. And Jesus answers that the anger was already the thing, the look was already the thing — the commandment was never aiming at the hand alone.</p>
       </div>
-      <div>
-        <div class="label">Its modern twin</div>
-        <p class="defense">"A human reviewed it. A person clicked approve."</p>
-        <p class="answer">The record shows a human decision. But the click happened inside a space the system had already shaped — options generated, ranked, filtered. The person chose among survivors. That is a selection, not a decision.</p>
+      <div class="df">
+        <span class="label">Its modern twin</span>
+        <p class="line">"A human reviewed it. A person clicked approve."</p>
+        <p>The record shows a human decision. But the click happened inside a space the system had already shaped — options generated, ranked, filtered. The person chose among survivors. That is a selection, not a decision.</p>
       </div>
     </div>
-    <p>Both defenses are true at the layer they name. Both answer the wrong question. <strong>Sin and software both do their most consequential work before the moment anyone would call a choice.</strong></p>
-    <p>Which is why the law, read the way Jesus reads it, is already calibrated to this problem. It is not a devotional overlay on a technology conversation. It is the older and more precise account of how formation precedes act.</p>
+    <p class="df-after">Both defenses are true at the layer they name. Both answer the wrong question. <b>Sin and software do their most consequential work before the moment anyone would call a choice</b> — which is why the law, read the way Jesus reads it, is already calibrated to this problem. It is not a devotional overlay on a technology conversation. It is the older, more precise account of how formation precedes act.</p>
   </div>
 </section>
 
 <section class="chain">
-  <div class="wrap">
-    <h2>The chain of warrant</h2>
-    <p class="sub">Four textual moves hold this framework up. If any link is weak, the rest is decoration.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="n serif">i</div>
-        <h4>The two commandments sum the law</h4>
-        <p>Jesus states the summation himself. The whole law <em>hangs</em> on loving God and loving neighbor.</p>
-        <div class="ref">Matthew 22:37–40</div>
-      </div>
-      <div class="step">
-        <div class="n serif">ii</div>
-        <h4>The second table is neighbor-love</h4>
-        <p>Paul does the arithmetic explicitly — adultery, murder, theft, coveting, summed up in one word.</p>
-        <div class="ref">Romans 13:8–10 · James 2:8</div>
-      </div>
-      <div class="step">
-        <div class="n serif">iii</div>
-        <h4>The commandments address the heart</h4>
-        <p>Jesus lists commandments six through nine and locates their origin in the interior. The Sermon's interiorizations are instances of a stated principle.</p>
-        <div class="ref">Matthew 15:19 · Mark 7:21–23</div>
-      </div>
-      <div class="step">
-        <div class="n serif">iv</div>
-        <h4>The tenth was always interior</h4>
-        <p>Coveting has no external act. Paul names it as the commandment that exposed him. Jesus is not adding interiority — he reads the nine as the tenth was always written.</p>
-        <div class="ref">Romans 7:7 · Luke 12:15</div>
-      </div>
+  <div class="frame">
+    <h2>Four texts hold this up</h2>
+    <p class="sub">If any link is weak, the rest is decoration. Check them.</p>
+    <div class="chain-row">
+      <div class="n">i</div>
+      <div><h3>The two commands sum the law</h3></div>
+      <p>Jesus states the summation himself: the whole law hangs on loving God and loving neighbor.</p>
+      <div class="ref">Matthew 22:37–40</div>
+    </div>
+    <div class="chain-row">
+      <div class="n">ii</div>
+      <div><h3>The second table is neighbor-love</h3></div>
+      <p>Paul does the arithmetic: adultery, murder, theft, coveting — summed up in one word.</p>
+      <div class="ref">Romans 13:8–10 · James 2:8</div>
+    </div>
+    <div class="chain-row">
+      <div class="n">iii</div>
+      <div><h3>The commandments address the heart</h3></div>
+      <p>Jesus lists commandments six through nine and locates their origin in the interior.</p>
+      <div class="ref">Matthew 15:19 · Mark 7:21–23</div>
+    </div>
+    <div class="chain-row">
+      <div class="n">iv</div>
+      <div><h3>The tenth was always interior</h3></div>
+      <p>Coveting has no external act. Jesus is not adding interiority — he reads the nine the way the tenth was always written.</p>
+      <div class="ref">Romans 7:7 · Luke 12:15</div>
     </div>
   </div>
 </section>
 
-<!-- ============ FIRST TABLE ============ -->
-<section class="table-group">
-  <div class="wrap">
-    <div class="tg-head">
-      <h2>The First Table</h2>
-      <span class="pillar">Know God · Love God</span>
-    </div>
-    <p class="tg-sub">Four commandments about God — which turn out to be four commandments about what you consult first, what you reduce Him to, whose authority your words borrow, and who owns your output.</p>
-
-    <div class="row">
-      <div class="num serif">1</div>
-      <div>
-        <div class="cmd">No other gods before me</div>
-        <div class="cmd-ref">Exodus 20:3</div>
-        <div class="lands">
-          <div class="block">
-            <div class="h">Where it lands <span class="warrant w-stated">Stated</span></div>
-            <p class="quote">"You cannot serve God and money."</p>
-            <p class="src">Matthew 6:24 · "Where your treasure is, there your heart will be also," 6:21</p>
-          </div>
-          <div class="block">
-            <div class="h">What the commandment governs</div>
-            <p>Not chiefly statues — functional ultimacy. What you consult, trust, and rely on before anything else.</p>
-          </div>
-        </div>
-        <p class="ask">When you have a question, what do you turn to first?</p>
-        <div class="topic">Topic → <b>Discernment: Tool or Substitute</b> · <b>Who Governs Whom</b></div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="num serif">2</div>
-      <div>
-        <div class="cmd">No graven image</div>
-        <div class="cmd-ref">Exodus 20:4–6</div>
-        <div class="lands">
-          <div class="block">
-            <div class="h">Where it lands <span class="warrant w-implied">Implied</span></div>
-            <p class="quote">"God is spirit, and those who worship him must worship in spirit and truth."</p>
-            <p class="src">John 4:24</p>
-          </div>
-          <div class="block">
-            <div class="h">What the commandment governs</div>
-            <p>Reducing God to something we fashion and can manage. The image is safer than the God — that is the appeal, and the violation.</p>
-          </div>
-        </div>
-        <p class="ask">Are you relating to God, or to a representation of God that you made and can control?</p>
-        <div class="topic"><span class="new">New</span>Topic → <b>The Synthetic Sacred</b> — AI that speaks as God, generated theology, machine spiritual counsel</div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="num serif">3</div>
-      <div>
-        <div class="cmd">Not taking the name in vain</div>
-        <div class="cmd-ref">Exodus 20:7</div>
-        <div class="lands">
-          <div class="block">
-            <div class="h">Where it lands <span class="warrant w-stated">Stated</span></div>
-            <p class="quote">"Let what you say be simply 'Yes' or 'No.'"</p>
-            <p class="src">Matthew 5:33–37</p>
-          </div>
-          <div class="block">
-            <div class="h">What the commandment governs</div>
-            <p>Invoking a name to lend weight to words. Jesus removes the machinery of oath entirely: your word carries only what you actually stand behind.</p>
-          </div>
-        </div>
-        <p class="ask">Does your speech carry authority you have not earned?</p>
-        <div class="topic">Topic → <b>Authenticity &amp; Authorship</b> · <b>Truth &amp; Verification</b></div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="num serif">4</div>
-      <div>
-        <div class="cmd">Remember the Sabbath</div>
-        <div class="cmd-ref">Exodus 20:8–11 · Deuteronomy 5:12–15</div>
-        <div class="lands">
-          <div class="block">
-            <div class="h">Where it lands <span class="warrant w-stated">Stated</span></div>
-            <p class="quote">"The Sabbath was made for man, not man for the Sabbath."</p>
-            <p class="src">Mark 2:27</p>
-          </div>
-          <div class="block">
-            <div class="h">What the commandment governs</div>
-            <p>Deuteronomy grounds it in deliverance: <em>remember you were a slave.</em> Rest is the weekly declaration that a people is no longer owned by its output.</p>
-          </div>
-        </div>
-        <p class="ask">In an economy organized around optimizing everything — who owns your output?</p>
-        <div class="topic">Topic → <b>Rest, Sabbath &amp; Attention</b></div>
-      </div>
-    </div>
+<section class="table-head">
+  <div class="frame">
+    <div class="band"><h2>The First Table</h2><span class="pill">Know God · Love God</span></div>
+    <p class="sub">Four commandments about God — which turn out to govern what you consult first, what you reduce Him to, whose authority your words borrow, and who owns your output.</p>
   </div>
 </section>
 
-<!-- ============ HINGE ============ -->
-<section class="table-group">
-  <div class="wrap">
-    <div class="tg-head">
-      <h2>The Hinge</h2>
-      <span class="pillar">Love God · Love People</span>
+<div class="frame">
+  <div class="cmd">
+    <div class="big-n">1</div>
+    <div>
+      <h3>No other gods before me</h3>
+      <div class="exref">Exodus 20:3</div>
+      <div class="cmd-cols">
+        <div>
+          <div class="h">Where it lands<span class="warrant w-stated">Stated</span></div>
+          <p class="quote">"You cannot serve God and money."</p>
+          <p class="src">Matthew 6:24 · "Where your treasure is, there your heart will be also," 6:21</p>
+        </div>
+        <div>
+          <div class="h">What it governs</div>
+          <p class="gov">Not chiefly statues — functional ultimacy. What you consult, trust, and rely on before anything else.</p>
+        </div>
+      </div>
+      <p class="ask">When you have a question, what do you turn to first?</p>
+      <div class="maps">Lands in → <b>Discernment: Tool or Substitute</b> · <b>Who Governs Whom</b></div>
     </div>
-    <p class="tg-sub">The commandment that faces both directions — and the sharpest text in this framework for anyone who governs systems.</p>
+  </div>
 
-    <div class="row">
-      <div class="num serif">5</div>
+  <div class="cmd">
+    <div class="big-n">2</div>
+    <div>
+      <h3>No graven image</h3>
+      <div class="exref">Exodus 20:4–6</div>
+      <div class="cmd-cols">
+        <div>
+          <div class="h">Where it lands<span class="warrant w-implied">Implied</span></div>
+          <p class="quote">"God is spirit, and those who worship him must worship in spirit and truth."</p>
+          <p class="src">John 4:24</p>
+        </div>
+        <div>
+          <div class="h">What it governs</div>
+          <p class="gov">Reducing God to something we fashion and can manage. The image is safer than the God — that is the appeal, and the violation.</p>
+        </div>
+      </div>
+      <p class="ask">Are you relating to God, or to a representation of God that you made and can control?</p>
+      <div class="maps"><span class="newflag">New</span>Lands in → <b>The Synthetic Sacred</b> — AI that speaks as God, generated theology, machine spiritual counsel</div>
+    </div>
+  </div>
+
+  <div class="cmd">
+    <div class="big-n">3</div>
+    <div>
+      <h3>Not taking the name in vain</h3>
+      <div class="exref">Exodus 20:7</div>
+      <div class="cmd-cols">
+        <div>
+          <div class="h">Where it lands<span class="warrant w-stated">Stated</span></div>
+          <p class="quote">"Let what you say be simply 'Yes' or 'No.'"</p>
+          <p class="src">Matthew 5:33–37</p>
+        </div>
+        <div>
+          <div class="h">What it governs</div>
+          <p class="gov">Invoking a name to lend weight to words. Jesus removes the machinery of oath entirely: your word carries only what you actually stand behind.</p>
+        </div>
+      </div>
+      <p class="ask">Does your speech carry authority you have not earned?</p>
+      <div class="maps">Lands in → <b>Authenticity &amp; Authorship</b> · <b>Truth &amp; Verification</b></div>
+    </div>
+  </div>
+
+  <div class="cmd">
+    <div class="big-n">4</div>
+    <div>
+      <h3>Remember the Sabbath</h3>
+      <div class="exref">Exodus 20:8–11 · Deuteronomy 5:12–15</div>
+      <div class="cmd-cols">
+        <div>
+          <div class="h">Where it lands<span class="warrant w-stated">Stated</span></div>
+          <p class="quote">"The Sabbath was made for man, not man for the Sabbath."</p>
+          <p class="src">Mark 2:27</p>
+        </div>
+        <div>
+          <div class="h">What it governs</div>
+          <p class="gov">Deuteronomy grounds it in deliverance: remember you were a slave. Rest is the weekly declaration that a people is no longer owned by its output.</p>
+        </div>
+      </div>
+      <p class="ask">In an economy organized around optimizing everything — who owns your output?</p>
+      <div class="maps">Lands in → <b>Rest, Sabbath &amp; Attention</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="hinge">
+  <section class="table-head" style="padding-top:clamp(30px,4vw,48px);">
+    <div class="frame">
+      <div class="band"><h2>The Hinge</h2><span class="pill">Love God · Love People</span></div>
+      <p class="sub">The commandment that faces both directions — and the sharpest text in this framework for anyone who governs systems.</p>
+    </div>
+  </section>
+  <div class="frame">
+    <div class="cmd">
+      <div class="big-n">5</div>
       <div>
-        <div class="cmd">Honor your father and mother</div>
-        <div class="cmd-ref">Exodus 20:12</div>
-        <div class="lands">
-          <div class="block">
-            <div class="h">Where it lands <span class="warrant w-stated">Stated</span></div>
+        <h3>Honor your father and mother</h3>
+        <div class="exref">Exodus 20:12</div>
+        <div class="cmd-cols">
+          <div>
+            <div class="h">Where it lands<span class="warrant w-stated">Stated</span></div>
             <p class="quote">"You void the word of God by your tradition."</p>
-            <p class="src">Mark 7:9–13 — the Corban ruling, where a procedurally valid dedication released a man from supporting his parents</p>
+            <p class="src">Mark 7:9–13 — the Corban ruling: a procedurally valid dedication that released a man from supporting his parents</p>
           </div>
-          <div class="block">
-            <div class="h">What the commandment governs</div>
-            <p>Honor runs backward to those who formed you and forward to those you are forming. Jesus does not call Corban a loophole. He calls it voiding the word of God.</p>
+          <div>
+            <div class="h">What it governs</div>
+            <p class="gov">Honor runs backward to those who formed you and forward to those you are forming. Jesus does not call Corban a loophole. He calls it voiding the word of God.</p>
           </div>
         </div>
         <p class="ask">Does your technical compliance void the actual obligation?</p>
-        <div class="topic">Topic → <b>Children &amp; the Next Generation's Judgment</b> · <b>Who Governs Whom</b> — Corban is the biblical name for automation theater</div>
+        <div class="maps">Lands in → <b>Children &amp; the Next Generation's Judgment</b> · <b>Who Governs Whom</b> — Corban is the biblical name for automation theater</div>
       </div>
     </div>
+  </div>
+</div>
+
+<section class="table-head">
+  <div class="frame">
+    <div class="band"><h2>The Second Table</h2><span class="pill">Love People · Live Faithfully</span></div>
+    <p class="sub">Five commandments about the neighbor — each one, in Jesus's reading, already violated in the interior before anything visible happens.</p>
   </div>
 </section>
 
-<!-- ============ SECOND TABLE ============ -->
-<section class="table-group">
-  <div class="wrap">
-    <div class="tg-head">
-      <h2>The Second Table</h2>
-      <span class="pillar">Love People · Live Faithfully</span>
-    </div>
-    <p class="tg-sub">Five commandments about the neighbor — each one, in Jesus's reading, already violated in the interior before anything visible happens.</p>
-
-    <div class="row">
-      <div class="num serif">6</div>
-      <div>
-        <div class="cmd">You shall not murder</div>
-        <div class="cmd-ref">Exodus 20:13</div>
-        <div class="lands">
-          <div class="block">
-            <div class="h">Where it lands <span class="warrant w-stated">Stated</span></div>
-            <p class="quote">"Everyone who is angry with his brother will be liable to judgment… whoever says, 'You fool!' will be liable."</p>
-            <p class="src">Matthew 5:21–22 · "Everyone who hates his brother is a murderer," 1 John 3:15</p>
-          </div>
-          <div class="block">
-            <div class="h">What the commandment governs</div>
-            <p>Contempt — the reduction of a person to something less than a person. Jesus locates murder's root there.</p>
-          </div>
+<div class="frame">
+  <div class="cmd">
+    <div class="big-n">6</div>
+    <div>
+      <h3>You shall not murder</h3>
+      <div class="exref">Exodus 20:13</div>
+      <div class="cmd-cols">
+        <div>
+          <div class="h">Where it lands<span class="warrant w-stated">Stated</span></div>
+          <p class="quote">"Everyone who is angry with his brother will be liable to judgment… whoever says, 'You fool!' will be liable."</p>
+          <p class="src">Matthew 5:21–22 · "Everyone who hates his brother is a murderer," 1 John 3:15</p>
         </div>
-        <p class="ask">Where does contempt become procedure? Scored, sorted, and treated as the score — contempt at scale does not feel like contempt. It feels like efficiency.</p>
-        <div class="topic">Topic → <b>Justice, Bias &amp; the Vulnerable</b></div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="num serif">7</div>
-      <div>
-        <div class="cmd">You shall not commit adultery</div>
-        <div class="cmd-ref">Exodus 20:14</div>
-        <div class="lands">
-          <div class="block">
-            <div class="h">Where it lands <span class="warrant w-stated">Stated</span></div>
-            <p class="quote">"Everyone who looks at a woman with lustful intent has already committed adultery with her in his heart."</p>
-            <p class="src">Matthew 5:27–28</p>
-          </div>
-          <div class="block">
-            <div class="h">What the commandment governs</div>
-            <p>A private act, no external partner, no visible victim — and Jesus says the violation is complete. The commandment whose interiorization maps onto synthetic intimacy with uncomfortable precision.</p>
-          </div>
+        <div>
+          <div class="h">What it governs</div>
+          <p class="gov">Contempt — the reduction of a person to something less than a person. Jesus locates murder's root there.</p>
         </div>
-        <p class="ask">Is fidelity intact where no one can see and no one appears to be harmed?</p>
-        <div class="topic">Topic → <b>Machine Companions &amp; Human Presence</b>, extended to synthetic intimacy</div>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="num serif">8</div>
-      <div>
-        <div class="cmd">You shall not steal</div>
-        <div class="cmd-ref">Exodus 20:15</div>
-        <div class="lands">
-          <div class="block">
-            <div class="h">Where it lands <span class="warrant w-stated">Stated</span> <span class="warrant w-applied">Applied</span></div>
-            <p class="quote">"Out of the heart come… thefts."</p>
-            <p class="src">Matthew 15:19 — heart-origin stated; the data extension is application</p>
-          </div>
-          <div class="block">
-            <div class="h">What the commandment governs</div>
-            <p>Taking what is not yours — including from people who never agreed and often never knew.</p>
-          </div>
-        </div>
-        <p class="ask">Is this mine to give, or mine to take? The rule for AI inputs — <em>is this mine to share?</em> — is a theft question before it is a privacy question.</p>
-        <div class="topic">Topic → <b>Sacred Boundaries &amp; Confidences</b> · <b>The Person Behind the Data</b></div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="num serif">9</div>
-      <div>
-        <div class="cmd">You shall not bear false witness</div>
-        <div class="cmd-ref">Exodus 20:16</div>
-        <div class="lands">
-          <div class="block">
-            <div class="h">Where it lands <span class="warrant w-stated">Stated</span></div>
-            <p class="quote">"Out of the heart come… false witness."</p>
-            <p class="src">Matthew 15:19 · "Let your yes be yes," Matthew 5:37</p>
-          </div>
-          <div class="block">
-            <div class="h">What the commandment governs</div>
-            <p>Note what it protects: a <em>neighbor</em>, not an abstraction. False witness harms a specific person — which makes verification an act of love, not pedantry.</p>
-          </div>
-        </div>
-        <p class="ask">Whose word does it become when you repeat it? Unverified output passed along is false witness borne, whether or not you intended to deceive.</p>
-        <div class="topic">Topic → <b>Truth &amp; Verification</b> · <b>Synthetic Media &amp; False Witness</b></div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="num serif">10</div>
-      <div>
-        <div class="cmd">You shall not covet</div>
-        <div class="cmd-ref">Exodus 20:17</div>
-        <div class="lands">
-          <div class="block">
-            <div class="h">Where it lands <span class="warrant w-stated">Stated</span></div>
-            <p class="quote">"Take care, and be on your guard against all covetousness."</p>
-            <p class="src">Luke 12:15 · "I would not have known what it is to covet if the law had not said…," Romans 7:7</p>
-          </div>
-          <div class="block">
-            <div class="h">What the commandment governs</div>
-            <p>The commandment with no external act — and therefore the key to all the others. Wanting itself is under command.</p>
-          </div>
-        </div>
-        <p class="ask">Who is shaping what you want? Ranking and recommendation are not neutral about desire. Shaping wanting is the business model.</p>
-        <div class="topic"><span class="new">New</span>Topic → <b>Engineered Desire</b> — the formation layer, with a commandment attached</div>
-      </div>
+      <p class="ask">Where does contempt become procedure? Scored, sorted, and treated as the score — contempt at scale does not feel like contempt. It feels like efficiency.</p>
+      <div class="maps">Lands in → <b>Justice, Bias &amp; the Vulnerable</b></div>
     </div>
   </div>
-</section>
 
-<section class="wrap legend">
-  <div class="item">
-    <span class="warrant w-stated">Stated</span>
-    <p>Jesus or an apostle makes this move explicitly, in these terms.</p>
+  <div class="cmd">
+    <div class="big-n">7</div>
+    <div>
+      <h3>You shall not commit adultery</h3>
+      <div class="exref">Exodus 20:14</div>
+      <div class="cmd-cols">
+        <div>
+          <div class="h">Where it lands<span class="warrant w-stated">Stated</span></div>
+          <p class="quote">"Everyone who looks at a woman with lustful intent has already committed adultery with her in his heart."</p>
+          <p class="src">Matthew 5:27–28</p>
+        </div>
+        <div>
+          <div class="h">What it governs</div>
+          <p class="gov">A private act, no external partner, no visible victim — and Jesus says the violation is complete. The interiorization that maps onto synthetic intimacy with uncomfortable precision.</p>
+        </div>
+      </div>
+      <p class="ask">Is fidelity intact where no one can see and no one appears to be harmed?</p>
+      <div class="maps">Lands in → <b>Machine Companions &amp; Human Presence</b>, extended to synthetic intimacy</div>
+    </div>
   </div>
-  <div class="item">
-    <span class="warrant w-implied">Implied</span>
-    <p>A clear extension from the text, not stated in these words.</p>
-  </div>
-  <div class="item">
-    <span class="warrant w-applied">Applied</span>
-    <p>Application to AI. Interpretation, not exegesis — and labeled so.</p>
-  </div>
-</section>
 
-<section class="closing">
-  <div class="wrap">
-    <blockquote>The law was never aiming at the hand alone. <em>Neither is the machine.</em></blockquote>
+  <div class="cmd">
+    <div class="big-n">8</div>
+    <div>
+      <h3>You shall not steal</h3>
+      <div class="exref">Exodus 20:15</div>
+      <div class="cmd-cols">
+        <div>
+          <div class="h">Where it lands<span class="warrant w-stated">Stated</span><span class="warrant w-applied">Applied</span></div>
+          <p class="quote">"Out of the heart come… thefts."</p>
+          <p class="src">Matthew 15:19 — heart-origin stated; the data extension is application</p>
+        </div>
+        <div>
+          <div class="h">What it governs</div>
+          <p class="gov">Taking what is not yours — including from people who never agreed and often never knew.</p>
+        </div>
+      </div>
+      <p class="ask">Is this mine to give, or mine to take? The rule for AI inputs — is this mine to share? — is a theft question before it is a privacy question.</p>
+      <div class="maps">Lands in → <b>Sacred Boundaries &amp; Confidences</b> · <b>The Person Behind the Data</b></div>
+    </div>
+  </div>
+
+  <div class="cmd">
+    <div class="big-n">9</div>
+    <div>
+      <h3>You shall not bear false witness</h3>
+      <div class="exref">Exodus 20:16</div>
+      <div class="cmd-cols">
+        <div>
+          <div class="h">Where it lands<span class="warrant w-stated">Stated</span></div>
+          <p class="quote">"Out of the heart come… false witness."</p>
+          <p class="src">Matthew 15:19 · "Let your yes be yes," Matthew 5:37</p>
+        </div>
+        <div>
+          <div class="h">What it governs</div>
+          <p class="gov">Note what it protects: a neighbor, not an abstraction. False witness harms a specific person — which makes verification an act of love, not pedantry.</p>
+        </div>
+      </div>
+      <p class="ask">Whose word does it become when you repeat it? Unverified output passed along is false witness borne, whether or not you intended to deceive.</p>
+      <div class="maps">Lands in → <b>Truth &amp; Verification</b> · <b>Synthetic Media &amp; False Witness</b></div>
+    </div>
+  </div>
+
+  <div class="cmd">
+    <div class="big-n">10</div>
+    <div>
+      <h3>You shall not covet</h3>
+      <div class="exref">Exodus 20:17</div>
+      <div class="cmd-cols">
+        <div>
+          <div class="h">Where it lands<span class="warrant w-stated">Stated</span></div>
+          <p class="quote">"Take care, and be on your guard against all covetousness."</p>
+          <p class="src">Luke 12:15 · "I would not have known what it is to covet if the law had not said…," Romans 7:7</p>
+        </div>
+        <div>
+          <div class="h">What it governs</div>
+          <p class="gov">The commandment with no external act — and therefore the key to all the others. Wanting itself is under command.</p>
+        </div>
+      </div>
+      <p class="ask">Who is shaping what you want? Ranking and recommendation are not neutral about desire. Shaping wanting is the business model.</p>
+      <div class="maps"><span class="newflag">New</span>Lands in → <b>Engineered Desire</b> — the formation layer, with a commandment attached</div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="it"><span class="warrant w-stated">Stated</span><br>Jesus or an apostle makes this move explicitly, in these terms.</div>
+    <div class="it"><span class="warrant w-implied">Implied</span><br>A clear extension from the text, not stated in these words.</div>
+    <div class="it"><span class="warrant w-applied">Applied</span><br>Application to AI. Interpretation, not exegesis — and labeled so.</div>
+  </div>
+</div>
+
+<div class="endnote">
+  <div class="frame endnote-in">
+    <p class="word">The law was never aiming at the hand alone. <span>Neither is the machine.</span></p>
     <p>Matthew 5 contains two further teachings — on divorce and on retaliation — that are deliberately not mapped here. Forcing them would weaken the framework rather than extend it. The omission is noted rather than hidden.</p>
-    <p class="note"><strong>Notes.</strong> Numbering follows the Reformed and Protestant division of the Ten Words, with the fifth commandment as the hinge; Catholic and Lutheran traditions number and divide differently. Quotations follow standard English wording pending final translation choice. The parallel between Jesus's reading of the law and the governance question is offered as an analogy — a strong one, and not a claim that the Sermon on the Mount is teaching oversight design.</p>
+    <p>Numbering follows the Reformed and Protestant division of the Ten Words; Catholic and Lutheran traditions number and divide differently. Quotations follow standard English wording pending final translation choice. The parallel between Jesus's reading of the law and the governance question is offered as an analogy — a strong one, and not a claim that the Sermon on the Mount is teaching oversight design.</p>
+    <a class="back-cta" href="/">Back to the twenty-one questions</a>
   </div>
-</section>
+</div>
 
 <footer>
-  <div class="wrap row2">
-    <div class="sig">Hency <span>Varghese</span></div>
-    <div class="fine">Where the Commandment Lands · draft v0.1 · © 2026 Mariam Hency Varghese</div>
+  <div class="frame foot-in">
+    <div class="sig">Hency Varghese</div>
+    <div class="foot-links">
+      <a href="https://hencyvarghese.com">hencyvarghese.com</a>
+      <a href="https://hency.substack.com">Substack</a>
+      <a href="https://hencyvarghese.com/speaking">Speaking</a>
+    </div>
+    <div class="fine">Where the Commandment Lands · working draft under review · © 2026 Mariam Hency Varghese</div>
   </div>
 </footer>
 
