@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biblically Literate AI — a field guide for people of faith</title>
+<meta name="description" content="Twenty-one questions every believer should be able to answer about the systems shaping their lives. Know God. Love God. Love People. Live Faithfully.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bone:#F5EFE3;
+    --bone-dim:#EAE1CE;
+    --ink:#191512;
+    --ink-2:#26201B;
+    --graphite:#57503F;
+    --oxide:#8A6A1C;        /* accent for text on bone — earned, sparing */
+    --oxide-bright:#C89B3C; /* accent for large type on ink only */
+    --oxblood:#7E2D26;      /* reserved: the spine, nothing else */
+    --hairline:#D8CCB4;
+    --hairline-ink:#3A322A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bone);
+    color:var(--ink);
+    font-family:'Newsreader',Georgia,serif;
+    font-size:1.05rem;
+    line-height:1.55;
+  }
+  ::selection{background:var(--oxide-bright);color:var(--ink);}
+  .frame{max-width:1180px;margin:0 auto;padding:0 clamp(24px,4vw,48px);}
+  .display{font-family:'Fraunces','Newsreader',serif;}
+  .label{
+    font-family:'Newsreader',serif;font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;font-weight:500;
+  }
+  a{color:inherit;}
+
+  /* ---- top bar ---- */
+  .bar{background:var(--ink);color:var(--bone);}
+  .bar-in{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:16px;flex-wrap:wrap;}
+  .bar .who{font-family:'Fraunces',serif;font-weight:600;font-size:1rem;letter-spacing:.01em;}
+  .bar nav{display:flex;gap:clamp(14px,2.5vw,30px);flex-wrap:wrap;}
+  .bar nav a{text-decoration:none;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;opacity:.75;}
+  .bar nav a:hover{opacity:1;}
+  .bar nav a.spine-link{opacity:1;border-bottom:2px solid var(--oxblood);padding-bottom:2px;}
+
+  /* ---- opening : ink, asymmetric ---- */
+  .opening{background:var(--ink);color:var(--bone);border-top:1px solid var(--hairline-ink);}
+  .opening-grid{
+    display:grid;grid-template-columns:minmax(0,1.6fr) minmax(230px,.7fr);
+    gap:clamp(28px,5vw,90px);padding:clamp(52px,8vw,110px) 0 clamp(40px,6vw,84px);
+  }
+  .opening .kicker{color:var(--oxide-bright);margin-bottom:30px;}
+  .opening h1{
+    font-family:'Fraunces',serif;font-weight:640;
+    font-variation-settings:'opsz' 144;
+    font-size:clamp(3.2rem,10.5vw,8.2rem);
+    line-height:.92;letter-spacing:-.025em;
+    margin-bottom:clamp(30px,4vw,52px);
+    max-width:11ch;
+  }
+  .opening h1 .lit{color:var(--oxide-bright);}
+  .claim{
+    border-top:3px solid var(--oxide-bright);
+    padding-top:20px;max-width:46ch;
+    font-size:clamp(1.12rem,1.9vw,1.4rem);line-height:1.5;
+    font-weight:500;
+  }
+  .claim + p{max-width:52ch;margin-top:18px;color:#CFC5B2;font-size:1rem;}
+
+  .pillar-rail{border-left:1px solid var(--hairline-ink);padding-left:clamp(18px,2.5vw,34px);align-self:end;padding-bottom:6px;}
+  .pillar-rail .rail-head{color:#8F8574;margin-bottom:22px;}
+  .rail-item{display:block;text-decoration:none;padding:13px 0;border-top:1px solid var(--hairline-ink);}
+  .rail-item:last-child{border-bottom:1px solid var(--hairline-ink);}
+  .rail-item .n{font-family:'Fraunces',serif;color:var(--oxide-bright);font-size:.85rem;margin-right:10px;}
+  .rail-item .p{font-family:'Fraunces',serif;font-weight:560;font-size:1.18rem;}
+  .rail-item .c{float:right;color:#8F8574;font-size:.8rem;padding-top:4px;}
+  .rail-item:hover .p{color:var(--oxide-bright);}
+
+  /* ---- the one number that matters ---- */
+  .fact{background:var(--ink);color:var(--bone);border-top:1px solid var(--hairline-ink);}
+  .fact-in{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,54px);align-items:baseline;padding:30px 0 44px;}
+  .fact .big{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(3rem,7vw,5.4rem);line-height:1;letter-spacing:-.02em;}
+  .fact .big small{font-size:.35em;letter-spacing:0;color:#8F8574;font-weight:400;}
+  .fact .read{max-width:52ch;font-size:1rem;color:#CFC5B2;}
+  .fact .read strong{color:var(--bone);font-weight:600;}
+  .fact .src{display:block;margin-top:10px;color:#8F8574;font-size:.78rem;}
+
+  /* ---- how to read : claim header, four moves, deliberate empty right ---- */
+  .method{padding:clamp(54px,8vw,96px) 0 clamp(40px,6vw,70px);}
+  .method-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.6fr);gap:clamp(26px,4vw,70px);}
+  .method h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.7rem,3.4vw,2.5rem);letter-spacing:-.015em;margin-bottom:16px;max-width:18ch;}
+  .method .why{max-width:52ch;color:var(--graphite);margin-bottom:38px;}
+  .moves{counter-reset:mv;}
+  .move-row{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--hairline);}
+  .move-row:last-child{border-bottom:1px solid var(--hairline);}
+  .move-row::before{
+    counter-increment:mv;content:counter(mv);
+    font-family:'Fraunces',serif;font-size:1.6rem;font-weight:560;color:var(--oxide);line-height:1.1;
+  }
+  .move-row h3{font-size:1.02rem;font-weight:600;margin-bottom:2px;}
+  .move-row p{font-size:.92rem;color:var(--graphite);max-width:48ch;}
+  .method-aside{padding-top:8px;}
+  .method-aside .note{
+    border-left:3px solid var(--oxide);padding-left:18px;
+    font-size:.95rem;color:var(--graphite);max-width:36ch;
+  }
+  .method-aside .note b{color:var(--ink);font-weight:600;}
+
+  /* ---- start here ---- */
+  .start{border:2px solid var(--ink);margin-bottom:clamp(56px,8vw,90px);}
+  .start-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+  .start .left{padding:clamp(24px,3.5vw,46px);border-right:2px solid var(--ink);}
+  .start .left .label{color:var(--oxide);}
+  .start h3{font-family:'Fraunces',serif;font-weight:620;font-size:clamp(1.8rem,3.8vw,2.9rem);line-height:1.04;letter-spacing:-.02em;margin:14px 0 16px;}
+  .start p{max-width:44ch;color:var(--graphite);}
+  .start .right{padding:clamp(24px,3.5vw,46px);display:flex;flex-direction:column;justify-content:space-between;gap:26px;background:var(--bone-dim);}
+  .start .right p{font-size:1rem;max-width:40ch;}
+  .start .right .refs{color:var(--graphite);font-size:.85rem;}
+  .start .go{
+    align-self:flex-start;text-decoration:none;background:var(--ink);color:var(--bone);
+    padding:13px 22px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+  }
+  .start .go:hover{background:var(--oxide);}
+
+  /* ---- guide ledger ---- */
+  .guide-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:8px;}
+  .guide-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.02em;}
+  .guide-head .status{color:var(--graphite);font-size:.9rem;}
+  .pillar{display:grid;grid-template-columns:64px 1fr;gap:clamp(10px,2vw,28px);padding:clamp(38px,5vw,58px) 0 6px;}
+  .pillar-name{position:relative;}
+  .pillar-name span{
+    position:sticky;top:24px;display:inline-block;
+    writing-mode:vertical-rl;transform:rotate(180deg);
+    font-family:'Fraunces',serif;font-weight:600;font-size:1.35rem;letter-spacing:.02em;
+    color:var(--ink);border-left:3px solid var(--oxide);padding-left:10px;
+  }
+  .pillar-body .pillar-claim{
+    font-size:1.05rem;color:var(--graphite);max-width:56ch;margin-bottom:20px;
+  }
+  .pillar-body .pillar-claim b{color:var(--ink);font-weight:600;}
+  .entry{
+    display:grid;grid-template-columns:76px minmax(0,1.15fr) minmax(0,1fr);
+    gap:clamp(12px,2vw,30px);padding:20px 0 22px;border-top:1px solid var(--hairline);
+    text-decoration:none;align-items:start;
+  }
+  .entry:hover{background:var(--bone-dim);}
+  .entry .no{
+    font-family:'Fraunces',serif;font-weight:560;font-size:2.1rem;line-height:1;
+    color:var(--hairline);padding-top:2px;
+  }
+  .entry:hover .no{color:var(--oxide);}
+  .entry .t h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.32rem;line-height:1.12;letter-spacing:-.01em;margin-bottom:7px;}
+  .entry .t .refs{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--graphite);}
+  .entry .q{color:var(--graphite);font-size:.98rem;max-width:46ch;padding-top:3px;}
+  .entry .flag{
+    display:inline-block;margin-left:10px;background:var(--oxide);color:var(--bone);
+    font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;vertical-align:3px;font-family:'Newsreader',serif;
+  }
+  .pillar:last-of-type .entry:last-child{border-bottom:1px solid var(--hairline);}
+
+  /* dense variant for the long pillars */
+  .pillar.dense .entry{grid-template-columns:76px 1fr;padding:15px 0 16px;}
+  .pillar.dense .entry .q{display:none;}
+  .pillar.dense .entry .t h3{font-size:1.18rem;margin-bottom:4px;}
+  .pillar.dense .entry .t .oneline{color:var(--graphite);font-size:.92rem;display:block;max-width:64ch;}
+
+  /* ---- spine band ---- */
+  .spineband{background:var(--ink);color:var(--bone);margin-top:clamp(60px,9vw,110px);}
+  .spineband-in{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(26px,5vw,80px);padding:clamp(52px,8vw,96px) 0;align-items:center;}
+  .spineband .label{color:var(--oxblood);filter:brightness(1.9);}
+  .spineband h2{
+    font-family:'Fraunces',serif;font-weight:620;font-size:clamp(1.9rem,4.6vw,3.4rem);
+    line-height:1.08;letter-spacing:-.02em;margin:16px 0 20px;max-width:22ch;
+  }
+  .spineband p{color:#CFC5B2;max-width:52ch;}
+  .spineband .enter{
+    justify-self:start;text-decoration:none;border:2px solid var(--bone);
+    padding:16px 26px;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;
+  }
+  .spineband .enter:hover{background:var(--oxblood);border-color:var(--oxblood);}
+
+  /* ---- close + footer ---- */
+  .close{padding:clamp(56px,8vw,96px) 0 clamp(30px,4vw,50px);}
+  .close .word{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1.18;letter-spacing:-.015em;max-width:26ch;
+  }
+  .close .word span{color:var(--oxide);}
+  footer{border-top:2px solid var(--ink);margin-top:clamp(34px,5vw,60px);}
+  .foot-in{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:26px 0 46px;align-items:baseline;}
+  .foot-in .sig{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;}
+  .foot-links{display:flex;gap:24px;flex-wrap:wrap;}
+  .foot-links a{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--graphite);}
+  .foot-links a:hover{color:var(--oxide);}
+  .foot-in .fine{width:100%;color:var(--graphite);font-size:.78rem;margin-top:4px;}
+
+  @media(max-width:900px){
+    .opening-grid{grid-template-columns:1fr;}
+    .pillar-rail{border-left:none;border-top:1px solid var(--hairline-ink);padding:26px 0 0;}
+    .method-grid{grid-template-columns:1fr;}
+    .start-in{grid-template-columns:1fr;}
+    .start .left{border-right:none;border-bottom:2px solid var(--ink);}
+    .spineband-in{grid-template-columns:1fr;}
+    .spineband .enter{justify-self:start;}
+  }
+  @media(max-width:700px){
+    .pillar{grid-template-columns:1fr;}
+    .pillar-name span{writing-mode:horizontal-tb;transform:none;position:static;border-left:none;border-bottom:3px solid var(--oxide);padding:0 0 6px;}
+    .entry{grid-template-columns:56px 1fr;}
+    .entry .q{grid-column:2;}
+    .fact-in{grid-template-columns:1fr;gap:10px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="frame bar-in">
+    <div class="who">Hency Varghese</div>
+    <nav>
+      <a href="#know-god">Know God</a>
+      <a href="#love-god">Love God</a>
+      <a href="#love-people">Love People</a>
+      <a href="#live-faithfully">Live Faithfully</a>
+      <a class="spine-link" href="/spine">The Spine</a>
+    </nav>
+  </div>
+</div>
+
+<div class="opening">
+  <div class="frame opening-grid">
+    <div>
+      <div class="label kicker">A field guide for people of faith</div>
+      <h1>Biblically <span class="lit">Literate</span> AI</h1>
+      <p class="claim">AI is a theological question before it is a technical one. People bear God's image and carry a responsibility no system can hold for them.</p>
+      <p>Twenty-one questions about the machines shaping your work, your attention, and your neighbor — each one answered from a text that has been governing formation, truth, and trust far longer than any of the systems have existed.</p>
+    </div>
+    <div class="pillar-rail">
+      <div class="label rail-head">The guide, in the order the life of faith is ordered</div>
+      <a class="rail-item" href="#know-god"><span class="n">I</span><span class="p">Know God</span><span class="c">4 questions</span></a>
+      <a class="rail-item" href="#love-god"><span class="n">II</span><span class="p">Love God</span><span class="c">4 questions</span></a>
+      <a class="rail-item" href="#love-people"><span class="n">III</span><span class="p">Love People</span><span class="c">6 questions</span></a>
+      <a class="rail-item" href="#live-faithfully"><span class="n">IV</span><span class="p">Live Faithfully</span><span class="c">7 questions</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="fact">
+  <div class="frame fact-in">
+    <div class="big">44<small>%</small></div>
+    <div class="read">
+      <strong>of practicing Christians use AI often — more than the average American at 31%. Only 12% of pastors feel equipped to guide them.</strong>
+      The people of the Book are already deep inside these tools, mostly unshepherded. That gap is what this guide is for.
+      <span class="src">Barna Group, U.S. surveys Nov–Dec 2025 (n=1,514 adults; n=442 Protestant pastors)</span>
+    </div>
+  </div>
+</div>
+
+<section class="method">
+  <div class="frame method-grid">
+    <div>
+      <h2>Read one question a week. That pace is the point.</h2>
+      <p class="why">These tools were built for speed. Discernment is a practiced capacity — it forms slowly, and it forms by doing. Every page in this guide runs the same four moves, so by the third week the method is yours, not the page's.</p>
+      <div class="moves">
+        <div class="move-row"><div><h3>The question</h3><p>Stated plainly, before any answer. If you can carry only one thing into your week, carry the question.</p></div></div>
+        <div class="move-row"><div><h3>What Scripture actually says</h3><p>Text first, in context — exegesis before application, never decoration.</p></div></div>
+        <div class="move-row"><div><h3>What the current evidence shows</h3><p>Named sources with dates. No number appears without its origin.</p></div></div>
+        <div class="move-row"><div><h3>One practice for this week</h3><p>Small enough to actually do. Formation happens in the doing, not the reading.</p></div></div>
+      </div>
+    </div>
+    <div class="method-aside">
+      <p class="note"><b>Why four pillars?</b> Jesus summed the whole law in two commands — love God, love your neighbor. This guide walks them in the order iJesusYou orders the life of faith: know before love, love before work. The mapping from all ten commandments is on <a href="/spine">the spine page</a>.</p>
+    </div>
+  </div>
+</section>
+
+<div class="frame">
+  <div class="start">
+    <div class="start-in">
+      <div class="left">
+        <span class="label">Start here · question 02</span>
+        <h3>Human Agency &amp; Formation</h3>
+        <p>"Did God really say?" was an attack on knowing before it was an attack on doing. The serpent's method — reshape the question, and the choice follows — is the same method a ranked feed uses on you before breakfast.</p>
+      </div>
+      <div class="right">
+        <p>Half the questions in this guide lean on this one. Systems now draft before you write, rank before you read, and filter before you look. Understanding how choices get shaped before you make them is the literacy everything else builds on.</p>
+        <div class="refs">Genesis 3:1 · Deuteronomy 30:19</div>
+        <a class="go" href="#know-god">Begin with question 02</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="frame">
+  <div class="guide-head">
+    <h2>The twenty-one questions</h2>
+    <div class="status">Pages publish weekly. Every question below is already on the map.</div>
+  </div>
+
+  <div class="pillar" id="know-god">
+    <div class="pillar-name"><span>I · Know God</span></div>
+    <div class="pillar-body">
+      <p class="pillar-claim"><b>The oldest attack on human agency was a question about what God said.</b> Whose image you bear and whose word you trust is the literacy every other page depends on.</p>
+      <a class="entry" href="#">
+        <div class="no">01</div>
+        <div class="t"><h3>The Image of God &amp; What Must Remain Human</h3><div class="refs">Genesis 1:26–27</div></div>
+        <div class="q">What did God give people that no system can hold — and can you name it before the tools arrive?</div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">02</div>
+        <div class="t"><h3>Human Agency &amp; Formation<span class="flag">Start here</span></h3><div class="refs">Genesis 3:1 · Deuteronomy 30:19</div></div>
+        <div class="q">How do systems shape your choices before you make them?</div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">03</div>
+        <div class="t"><h3>Engineered Desire</h3><div class="refs">Exodus 20:17 · Luke 12:15</div></div>
+        <div class="q">The commandment with no external act meets the business model that shapes wanting. Who is forming what you want?</div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">04</div>
+        <div class="t"><h3>Scripture, Translation &amp; AI</h3><div class="refs">Matthew 4:4</div></div>
+        <div class="q">When AI touches the words communities live and die by, who remains accountable for faithfulness?</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="pillar" id="love-god">
+    <div class="pillar-name"><span>II · Love God</span></div>
+    <div class="pillar-body">
+      <p class="pillar-claim"><b>Devotion is made of practices, and practices are exactly what automation offers to do for you.</b> What you refuse to delegate here is itself an act of worship.</p>
+      <a class="entry" href="#">
+        <div class="no">05</div>
+        <div class="t"><h3>Rest, Sabbath &amp; Attention</h3><div class="refs">Exodus 20:8–11 · Deuteronomy 5:15</div></div>
+        <div class="q">When everything can be optimized, what does deliberate stopping declare about who owns you?</div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">06</div>
+        <div class="t"><h3>Discernment: Tool or Substitute</h3><div class="refs">Hebrews 5:14</div></div>
+        <div class="q">Is the tool feeding your disciplines — prayer, Scripture, wise counsel — or quietly replacing them?</div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">07</div>
+        <div class="t"><h3>Worship, Preaching &amp; the Machine</h3><div class="refs">Ezra 7:10</div></div>
+        <div class="q">Can a generated sermon feed a congregation — and what belongs to the preacher's own walk with God?</div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">08</div>
+        <div class="t"><h3>The Synthetic Sacred</h3><div class="refs">Exodus 20:4–6 · John 4:24</div></div>
+        <div class="q">AI that speaks as God, generated theology, machine spiritual counsel — worship in spirit and truth, or an image you can manage?</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="pillar dense" id="love-people">
+    <div class="pillar-name"><span>III · Love People</span></div>
+    <div class="pillar-body">
+      <p class="pillar-claim"><b>Every data point is a person, or a piece of one.</b> The second great commandment does not pause for the tools.</p>
+      <a class="entry" href="#">
+        <div class="no">09</div>
+        <div class="t"><h3>Sacred Boundaries &amp; Confidences</h3><span class="oneline">What was entrusted to you — and is it yours to give to a machine? · Proverbs 11:13</span></div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">10</div>
+        <div class="t"><h3>The Person Behind the Data</h3><span class="oneline">Could you explain the data practice, face to face, to the person the data describes? · Psalm 139:1–4</span></div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">11</div>
+        <div class="t"><h3>Machine Companions &amp; Human Presence</h3><span class="oneline">Why did God come embodied — and what does that say about outsourcing presence? · John 1:14</span></div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">12</div>
+        <div class="t"><h3>Justice, Bias &amp; the Vulnerable</h3><span class="oneline">Who answers when the system's error lands on the person with the least power to contest it? · Proverbs 31:8–9</span></div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">13</div>
+        <div class="t"><h3>Children &amp; the Next Generation's Judgment</h3><span class="oneline">If the practice work goes to machines, where will your children's discernment be formed? · Deuteronomy 6:6–7</span></div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">14</div>
+        <div class="t"><h3>Synthetic Media &amp; False Witness</h3><span class="oneline">The ninth commandment protects a neighbor. What does it require when seeing is no longer believing? · Exodus 20:16</span></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="pillar dense" id="live-faithfully">
+    <div class="pillar-name"><span>IV · Live Faithfully</span></div>
+    <div class="pillar-body">
+      <p class="pillar-claim"><b>Avodah — the Hebrew word for labor and worship, one act.</b> What you delegate, what you keep, and who answers for it are all questions about what your work is for.</p>
+      <a class="entry" href="#">
+        <div class="no">15</div>
+        <div class="t"><h3>Authenticity &amp; Authorship</h3><span class="oneline">If AI helped you write it, is it still your word — would you defend every sentence face to face? · Matthew 5:37</span></div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">16</div>
+        <div class="t"><h3>Truth &amp; Verification</h3><span class="oneline">Before you repeat what the machine said, whose word does it become? · Proverbs 18:17</span></div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">17</div>
+        <div class="t"><h3>Stewardship of AI at Work</h3><span class="oneline">Which work do you hand over gladly, and which work was building something in you? · Colossians 3:23</span></div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">18</div>
+        <div class="t"><h3>Kingdom Capacity &amp; Agentic AI</h3><span class="oneline">The tools create the margin — who decides what the margin is for? · Ephesians 5:15–16</span></div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">19</div>
+        <div class="t"><h3>Faithful Leadership in Secular Organizations</h3><span class="oneline">How does conviction become governance in a company that doesn't share your faith? · Daniel 6:3–4</span></div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">20</div>
+        <div class="t"><h3>Who Governs Whom: Accountability</h3><span class="oneline">For every AI-touched decision — a name or a system? And can a system repent? · Luke 12:48</span></div>
+      </a>
+      <a class="entry" href="#">
+        <div class="no">21</div>
+        <div class="t"><h3>Wisdom, Skills &amp; the Future of Work</h3><span class="oneline">What should you actually learn this year — and what do you owe the people you'll teach? · Proverbs 4:7</span></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="spineband">
+  <div class="frame spineband-in">
+    <div>
+      <div class="label">The spine of the whole guide</div>
+      <h2>The law was never aiming at the hand alone. Neither is the machine.</h2>
+      <p>Jesus moved the commandments from the visible act to the formation that precedes it — anger before murder, the look before adultery, the want before the taking. That is exactly where AI does its work. Ten commandments, two great commands, four pillars: the full mapping is one page.</p>
+    </div>
+    <a class="enter" href="/spine">Read the spine</a>
+  </div>
+</div>
+
+<section class="close">
+  <div class="frame">
+    <p class="word">Let AI multiply your work. Never let it stand in for you where you're the one accountable — <span>you bear God's image; the system does not.</span></p>
+  </div>
+</section>
+
+<footer>
+  <div class="frame foot-in">
+    <div class="sig">Hency Varghese</div>
+    <div class="foot-links">
+      <a href="https://hencyvarghese.com">hencyvarghese.com</a>
+      <a href="https://hency.substack.com">Substack</a>
+      <a href="https://hencyvarghese.com/speaking">Speaking</a>
+    </div>
+    <div class="fine">© 2026 Mariam Hency Varghese. Statistics on this page are stated with their sources; anything unsourced was cut.</div>
+  </div>
+</footer>
+
+</body>
+</html>
